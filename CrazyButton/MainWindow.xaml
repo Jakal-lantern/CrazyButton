@@ -1,0 +1,46 @@
+﻿<Window x:Class="CrazyButton.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CrazyButton"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1000" KeyDown="Window_KeyDown">
+
+    <Grid>
+        <!-- Game Button -->
+        <Button x:Name="gameButton" Content="Button" HorizontalAlignment="Left" Margin="264,231,0,0" VerticalAlignment="Top"  Click="gameButton_Click" Height="500" Width="500" Cursor="Hand">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Green"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <!-- Score Text -->
+        <TextBlock x:Name="scoreBlock" HorizontalAlignment="Left" Margin="425,10,0,0" TextWrapping="Wrap" Text="Score" VerticalAlignment="Top" FontSize="25"/>
+        
+        <!-- Timer Label -->
+        <Label x:Name="timerLabel" Content="00:00:00" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="657,10,0,0" FontSize="25"/>
+        
+        <!-- Highscore Text -->
+        <TextBlock x:Name="highscoreText" HorizontalAlignment="Left" Margin="112,10,0,0" TextWrapping="Wrap" Text="Highscore" VerticalAlignment="Top" FontSize="25"/>
+
+
+
+    </Grid>
+</Window>
